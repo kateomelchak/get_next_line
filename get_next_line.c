@@ -6,7 +6,7 @@
 /*   By: eomelcha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:15:21 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/21 14:49:42 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/21 16:00:26 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_find_end(char **line, char **dest, const int fd)
 	char	*tmp;
 	
 	i = 0;
-	while (dest[fd][i] = '\n' &&  dest[fd][i])
+	while ((dest[fd][i] == '\n') &&  dest[fd][i])
 		i++;
 	if (dest[fd][i] == '\n')
 	{
@@ -29,8 +29,8 @@ int		ft_find_end(char **line, char **dest, const int fd)
 	}
 	else 
 	{
-		*line = ft_strsub(dest[fd]);
-		ft_strdel(dest[fd]);
+		*line = ft_strdup(dest[fd]);
+		ft_strdel(&dest[fd]);
 	}
 	return (1);
 }
@@ -55,12 +55,12 @@ int		ft_read_src(char **line, char **dest, const int fd)
 		if (ft_strchr(buff, '\n'))
 			break;
 	}
-	return (ft_find_line(line, dest, fd);
+	return (ft_find_end(line, dest, fd));
 }
 
 int		get_next_line(const int fd, char **line)
 {
-	static char	*dest[FD_MAX]
+	static char	*dest[FD_MAX];
 
 	if (!line || fd < 0 || fd > FD_MAX || BUFF_SIZE <= 0)
 		return (-1);
