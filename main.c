@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eomelcha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 20:05:42 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/21 14:54:59 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/21 18:40:02 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int		main(int argc, char **argv)
 			i++;
 		}
 	}
-	system("leaks a.out");
+	system("leaks gnl");
 	return (0);
 }
