@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eomelcha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 16:15:21 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/21 16:00:26 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/21 19:10:52 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_find_end(char **line, char **dest, const int fd)
 {
-	int	i;
+	int		i;
 	char	*tmp;
 	
 	i = 0;
@@ -38,15 +38,10 @@ int		ft_find_end(char **line, char **dest, const int fd)
 int		ft_read_src(char **line, char **dest, const int fd)
 {
 	char	*tmp;
-	int	flag;
+	int		flag;
 	char	buff[BUFF_SIZE + 1];
 
-	flag = read(fd, buff, BUFF_SIZE);
-	if (flag < 0)
-		return (-1);
-	else if (flag == 0 && dest[fd][0] == '\0')
-		return (0);
-	while (flag > 0)
+	while ((flag = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[flag] = '\0';
 		tmp = ft_strjoin(dest[fd], buff);
@@ -55,6 +50,10 @@ int		ft_read_src(char **line, char **dest, const int fd)
 		if (ft_strchr(buff, '\n'))
 			break;
 	}
+	if (flag < 0)
+		return (-1);
+	else if (flag == 0 && dest[fd][0] == '\0')
+		return (0);
 	return (ft_find_end(line, dest, fd));
 }
 

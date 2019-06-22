@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eomelcha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 15:58:44 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/21 13:13:59 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/21 18:56:17 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 
 # define BUFF_SIZE 32
-# define FD_MAX 4846
+# define FD_MAX 10240
 
 int		get_next_line(const int fd, char **line);
 
