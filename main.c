@@ -47,6 +47,5 @@ int		main(int argc, char **argv)
 			i++;
 		}
 	}
-	system("leaks gnl");
 	return (0);
 }
