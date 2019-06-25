@@ -6,7 +6,7 @@
 /*   By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 20:05:42 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/21 18:40:02 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/24 18:50:26 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		main(int argc, char **argv)
 	{
 		while (get_next_line(0, &line) > 0)
 		{
-			printf("%s\n", line);
+			printf("my:_%s\n", line);
 			ft_strdel(&line);
 		}
 	}
@@ -40,12 +40,12 @@ int		main(int argc, char **argv)
 			{
 				while (get_next_line(fd, &line) > 0)
 				{
-					printf("%s\n", line);
+					printf("my:_%s\n", line);
 					ft_strdel(&line);
 				}
 			}
 			i++;
 		}
 	}
+	system("leaks gnl");
 	return (0);
-}

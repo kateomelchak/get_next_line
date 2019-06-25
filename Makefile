@@ -6,7 +6,7 @@
 #    By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/01 18:17:13 by eomelcha          #+#    #+#              #
-#    Updated: 2019/06/21 18:11:56 by eomelcha         ###   ########.fr        #
+#    Updated: 2019/06/24 17:09:22 by eomelcha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ OBJS = get_next_line.o\
 		main.o
 
 	
-CFLAGS = -Wall -Wextra -Werror 
-#-fsanitize+address
+CFLAGS = -Wall -Wextra -Werror -g 
+#-fsanitize=address
 
 all : $(NAME)
 
@@ -28,7 +28,7 @@ $(OBJS) : get_next_line.h
 
 add_lib :
 	@make -C libft
-
+	
 clean :
 	rm -f $(OBJS)
 	@make -C libft/ clean

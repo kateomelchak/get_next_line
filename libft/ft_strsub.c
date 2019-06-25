@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eomelcha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eomelcha <eomelcha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:44:30 by eomelcha          #+#    #+#             */
-/*   Updated: 2019/06/18 13:21:54 by eomelcha         ###   ########.fr       */
+/*   Updated: 2019/06/24 16:50:11 by eomelcha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*new;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	new = ft_strnew(len);
 	if (!new)
 		return (NULL);
